@@ -1,19 +1,6 @@
 import numpy as np
 from time import time
 
-def bench(n):
-    time_1 = time()
-    a_list = list(range(1, n+1))
-    result = sum(a_list)
-    time_2 = time()
-    print('result of list = %d. time = %f'%(result, time_2-time_1))
-    
-    time_1 = time()
-    a_np = np.arange(1, n+1, dtype=np.int64)
-    result = sum(a_np)
-    time_2 = time()
-    print('result of numpy = %d. time = %f'%(result, time_2-time_1))
-
 def basic_test():
     #1~1000000까지 더하기 - 일반 리스트 사용
     a_list = list(range(1, 1_000_001))
@@ -53,12 +40,24 @@ def basic_func_test():
     print(np.fromfunction(lambda i, j : i+j, (2,3), dtype='int'))
     print(np.fromfunction(lambda i, j : (i+1)*(j+1), (10,10), dtype='int'))
 
-def op_test():
+def op_test(npr):
+    print(npr * 5)
+    print(npr / 5)
+    print(npr ** 5)
+    print(npr // 5)
+    print(npr + npr)
+    print(npr * npr)
+    print(npr ** npr)
 
+def slicing_test(npr):
+    print(npr[0:3])
+    npr[0:3] = 100
+    print(npr)
+    npr[3:11] += 10
+    print(npr)
 
 if __name__ == '__main__':
-    
-
-
-
-  
+    a = np.arange(1,11)
+    print(a)
+    slicing_test(a)
+    print(a)
