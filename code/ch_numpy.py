@@ -61,3 +61,4 @@ if __name__ == '__main__':
     print(a)
     slicing_test(a)
     print(a)
+    op_test(a)
