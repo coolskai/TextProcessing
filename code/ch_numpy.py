@@ -62,4 +62,4 @@ if __name__ == '__main__':
     list_str.append(str(a))
     slicing_test(a)
     list_str.append(str(a))
-    print('\n'.join(list_str))
+    #print('\n'.join(list_str))
