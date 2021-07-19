@@ -57,7 +57,7 @@ def slicing_test(npr):
     print(npr)
 
 if __name__ == '__main__':
-    a = np.arange(1,11)
+    a = np.arange(1,10)
     print(a)
     slicing_test(a)
     print(a)
