@@ -1,5 +1,6 @@
 import txtutils as tu
 import pandas as pd
+import numpy as np
 
 docs = []
 docs.append("I am going to go to the store.")
@@ -19,4 +20,18 @@ for doc in docs:
     doc_vectors.append(doc_vector)
 
 df = pd.DataFrame(doc_vectors, columns=id_to_word.values())
-print(df)
+
+############ 실습코드 구현 ############
+print("<<<<df.T를 활용하여 출력한 결과>>>>")
+print(df.T)
+
+table = df.to_numpy()
+table = table.T
+keyword = input("input keyword : ")
+if keyword in word_to_id:
+    for i, val in enumerate(table[word_to_id[keyword]]):
+        if val == 1:
+            print('doc_num = {}. Text : {}'.format(i, docs[i]))
+
+else:
+    print('키워드 없음')
