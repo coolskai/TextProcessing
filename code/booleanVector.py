@@ -1,6 +1,5 @@
-import txtutils as tu
 import pandas as pd
-import numpy as np
+import txtutils as tu
 
 docs = []
 docs.append("I am going to go to the store.")
