@@ -1,4 +1,14 @@
 #txtutils.py
+def simple_tokenize(txt):
+    '''
+    간단한 토크나이징 함수
+    :param txt: 문자열
+    :return: 토큰 리스트
+    '''
+    txt = txt.lower()
+    txt = txt.replace('.', ' .')
+    token = txt.split()
+    return token
 
 def buildDict(docs):
     '''

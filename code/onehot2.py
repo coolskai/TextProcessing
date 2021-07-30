@@ -1,4 +1,4 @@
-import txtutils as tutil
+import txtutils as tu
 import pandas as pd
 
 docs = []
@@ -7,13 +7,11 @@ docs.append("The Science of today is the technology of tommorow.")
 docs.append("You are using pip version 3.")
 docs.append("Could not install packages due to an Error.")
 
-word_to_id, id_to_word = tutil.buildDict(docs)
+word_to_id, id_to_word = tu.buildDict(docs)
 doc_vectors = []
 for doc in docs:
     doc_vector = []
-    doc = doc.lower()
-    doc = doc.replace('.', ' .')
-    token = doc.split()
+    token = tu.simple_tokenize(doc)
     for word in token:
         vector = [0 for _ in word_to_id]
         vector[word_to_id[word]] = 1

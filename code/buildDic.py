@@ -1,3 +1,5 @@
+import txtutils as tu
+
 docs = []
 docs.append("I am going to go to the store.")
 docs.append("The Science of today is the technology of tommorow.")
@@ -7,9 +9,7 @@ docs.append("Could not install packages due to an Error.")
 word_to_id = {}
 id_to_word = {}
 for doc in docs:
-    doc = doc.lower()
-    doc = doc.replace('.', ' .')
-    token = doc.split()
+    token = tu.simple_tokenize(doc)
     for word in token:
         if word not in word_to_id:
             new_id = len(word_to_id)
